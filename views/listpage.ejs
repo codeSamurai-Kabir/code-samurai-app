@@ -23,7 +23,7 @@
             <td><%=item.yearmade%></td>
             <td><a href=<%=item.link%> target="opensesame"> song URL </a></td>
             <td>
-               <i class="material-icons">delete</i>
+               <a href="/delete?song=<%=item.songname %>"><i class="material-icons">delete</i></a>
                 <i class="material-icons">favorite</i>
             </td>
         </tr>

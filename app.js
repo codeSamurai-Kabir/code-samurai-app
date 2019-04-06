@@ -24,6 +24,7 @@ function databaseInitialize() {
          User.insert({username:'kabir',password:'kabirrules'});
          User.insert({username:'kabir',password:'kabirrocks'});
         User.insert({username:'user',password:'user'});
+
     }
     if (Item === null) {
         Item = db.addCollection('items');
@@ -138,4 +139,16 @@ app.post('/saveitem', function (request, response) {
 
     response.render('listpage',{ items:items });
 });
+
+app.get('/delete', function (request, response) {
+
+var song = request.query.song;
+ var  items = deleteAndSort('songname',song);
+    // hint #1: find the helper function that will help save the information first
+    // hint #2: make sure to send the list of items to the list page
+
+
+    response.render('listpage',{ items:items });
+});
+
 
