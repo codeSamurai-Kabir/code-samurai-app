@@ -151,4 +151,17 @@ var song = request.query.song;
     response.render('listpage',{ items:items });
 });
 
+app.get('/like', function (request, response) {
+
+var song = request.query.song;
+ var  items = likeAndSort('songname',song);
+    // hint #1: find the helper function that will help save the information first
+    // hint #2: make sure to send the list of items to the list page
+
+
+    response.render('listpage',{ items:items });
+});
+
+
+
 
